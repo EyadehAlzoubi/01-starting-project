@@ -11,6 +11,21 @@
     <p>only for admin</p>
   } -->
 
+  <!-- <ng-template appAuth="admin">
+    <p>only for admain</p>
+  </ng-template> -->
 
-  <p appAuth="admin">only for admain</p>
+
+  <p *appAuth="'admin'"  class="protected-content admin">
+    Only admins should see this!
+  </p>
+
+  <p *appAuth="'user'"  class="protected-content unauthenticated">
+    Regular users should see this!
+  </p>
+
+  <p *appAuth="'guest'"  class="protected-content authenticated">
+    Guest uses should see this!
+  </p>
+
 </main>
